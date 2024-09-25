@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notebook List</title>
+</head>
+<body>
+    <h1>Available Notebooks</h1>
+    <ul>
+        {% for notebook in notebooks %}
+            <li><a href="{{ url_for('notebook', filename=notebook) }}">{{ notebook }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

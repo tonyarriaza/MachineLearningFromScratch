@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{hyperref}
+\begin{document}
+
+\title{Available Notebooks}
+\author{Your Name}
+\date{\today}
+\maketitle
+
+\section{Available Notebooks}
+
+Here are the available notebooks:
+
+\begin{itemize}
+{% for notebook in notebooks %}
+    \item \href{ {{ base_url }}/notebook/{{ notebook|urlencode }} }{ {{ notebook }} }
+{% endfor %}
+\end{itemize}
+
+\end{document}
