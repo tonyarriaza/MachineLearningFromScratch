@@ -8,7 +8,7 @@ app = Flask(__name__)
 last_modified_time = None
 
 @app.route('/')
-def homepage():
+def home():
     global last_modified_time
     tex_file = 'homepage.tex'
     html_output = 'homepage.html'
@@ -84,12 +84,12 @@ def serve_image(filename):
     return send_from_directory('static/images', filename)
 
 
-if __name__ == '__main__':
-    # Set up argument parser
-    parser = argparse.ArgumentParser(description='Run the Flask application.')
-    parser.add_argument('--host', default='localhost', help='Host to run the app on.')
-    parser.add_argument('--port', default=5000, type=int, help='Port to run the app on.')
-    args = parser.parse_args()
+# if __name__ == '__main__':
+#     # Set up argument parser
+#     parser = argparse.ArgumentParser(description='Run the Flask application.')
+#     parser.add_argument('--host', default='localhost', help='Host to run the app on.')
+#     parser.add_argument('--port', default=5000, type=int, help='Port to run the app on.')
+#     args = parser.parse_args()
     
-    # Run the app with specified host and port
-    app.run(host=args.host, port=args.port,debug=True)
+#     # Run the app with specified host and port
+#     app.run(host=args.host, port=args.port,debug=True)
