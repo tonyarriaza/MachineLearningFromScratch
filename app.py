@@ -10,7 +10,8 @@ last_modified_time = None
 @app.route('/')
 def home():
     global last_modified_time
-    tex_file = 'homepage.tex'
+    # tex_file = 'homepage.tex'
+    tex_file = os.path.join(os.path.dirname(__file__), 'homepage.tex')
     html_output = 'homepage.html'
 
     # Get the current modification time of the .tex file
@@ -78,12 +79,14 @@ def serve_notebook(filename):
     # Render the HTML content directly
     return render_template_string(html_content)
 
-# Route to serve images
+# # Route to serve images
+# @app.route('/static/images/<path:filename>')
+# def serve_image(filename):
+#     return send_from_directory('static/images', filename)
+
 @app.route('/static/images/<path:filename>')
 def serve_image(filename):
-    return send_from_directory('static/images', filename)
-
-
+    return send_from_directory(os.path.join(os.path.dirname(__file__), 'static', 'images'), filename)
 # if __name__ == '__main__':
 #     # Set up argument parser
 #     parser = argparse.ArgumentParser(description='Run the Flask application.')
