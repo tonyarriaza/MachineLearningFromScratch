@@ -6,6 +6,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>homepage</title>
   <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -15,28 +155,63 @@
   </style>
 </head>
 <body>
-<h1 class="unnumbered" id="welcome-to-machine-learning-from-scratch">Welcome to Machine Learning From Scratch</h1>
-<h2 class="unnumbered" id="introduction">Introduction</h2>
-<p>This website provides a series of Jupyter notebooks that explain machine learning concepts from scratch.</p>
-<h2 class="unnumbered" id="notebooks">Notebooks</h2>
+<h1 class="unnumbered" id="hi-im-tony">Hi, I’m Tony</h1>
+<figure>
+<img src="static/images/myself.png" style="width:20.0%"
+alt="Tony Arriaza" />
+<figcaption aria-hidden="true">Tony Arriaza</figcaption>
+</figure>
+<h2 class="unnumbered" id="my-background"> My background</h2>
+<p>Hello, I’m Tony Arriaza. I’m 28 years old with experience primarily
+as a software engineer moving into the field of Machine Learning. In
+university I double majored in Mathematics and Computer Science. In
+undergraduate I focused on courses that would aid in Machine Learning.
+Such as Probability Theory,Mathematical Statistics, Deep Learning,
+Natural Language Processing, Artificial Intelligence, and Data Cleaning
+and Transformation. After a few years of working as a Software Engineer
+I decided to pursue my passions for Machine Learning yet again. This
+website also has a few entries that I’ve written implementing Neural
+Networks from scratch, as well as exploring the underlying Mathematics
+that allows these networks to function.</p>
+<h2 class="unnumbered" id="machine-learning-from-scratch">Machine
+Learning From Scratch</h2>
+<p>Here I have my exploration of Machine Learning from the ground up,
+using only numpy. I’ve written these for myself as a reference as well
+as a learning tool, after discovering that many online sources and even
+LLMs do a poor job at showing and describing the mathematics of these
+algorithms. Many sources will simply explain things at a high level
+because any library that can be used has an autograd system, that is a
+system that does most things anyone might need. However in many cases
+understanding *how* these autograd systems work is necessary to solve
+complex problems that may be outside of a basic domain. Furthermore, it
+is not always possible to rely on autograd systems, especially as
+Machine Learning becomes more important in areas where only low level
+languages are available, such as the defense industry. The goal of these
+notebooks is to outline a step by step approach on how one might develop
+a machine learning algorithm without access to an autograd system. Below
+is a list of Notebooks in the order I’ve written them</p>
 <ul>
-<li><p><strong>Back Propagation</strong>: Learn the fundamentals of backpropagation in neural networks.</p>
+<li><p><strong>Matrix Multiplication</strong>: The very basics, Matrix
+Multiplication and its implementation.</p>
 <ul>
-<li><p><a href="/notebooks/StartingFromTheBasicsBackPropagation.ipynb">Back Propagation Notebook</a></p></li>
+<li><p><a
+href="/notebooks/StartingFromTheBasicsMatrixMultiplication.ipynb">Matrix
+Multiplication</a></p></li>
 </ul></li>
-<li><p><strong>Linear Regression</strong>: Understand how linear regression works with step-by-step explanations.</p>
+<li><p><strong>Linear Regression</strong>: Explaining and implementing
+the underlying math of linear regression, and Gradient Descent</p>
 <ul>
-<li><p><a href="/notebooks/StartingFromTheBasicsLinearRegression.ipynb">Linear Regression Notebook</a></p></li>
+<li><p><a
+href="/notebooks/StartingFromTheBasicsLinearRegression.ipynb">Linear
+Regression</a></p></li>
 </ul></li>
-<li><p><strong>Matrix Multiplication</strong>: Dive into the mechanics of matrix multiplication.</p>
+<li><p><strong>Backpropagation</strong>: Explaining and implementing the
+underlying math of Backpropagation in a basic Neural Network.</p>
 <ul>
-<li><p><a href="/notebooks/StartingFromTheBasicsMatrixMultiplication.ipynb">Matrix Multiplication Notebook</a></p></li>
+<li><p><a
+href="/notebooks/StartingFromTheBasicsBackPropagation.ipynb">Back
+Propagation</a></p></li>
 </ul></li>
 </ul>
-<h2 class="unnumbered" id="image-example">Image Example</h2>
-<p>Here is an example image:</p>
-<figure>
-<img src="static/images/your_image.png" style="width:50.0%" alt="" /><figcaption>An example image.</figcaption>
-</figure>
 </body>
 </html>

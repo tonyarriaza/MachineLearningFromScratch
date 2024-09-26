@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  build-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TZ=America/New_York
+      - PYTHONPATH=/app/:${PYTHONPATH}
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python app.py --host=0.0.0.0
+    ports:
+      - "5000:5000"

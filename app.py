@@ -1,7 +1,7 @@
 from flask import Flask, render_template_string, send_from_directory, abort
 import subprocess
 import os
-
+import argparse
 app = Flask(__name__)
 
 # Keep track of the last modification time for the homepage
@@ -83,5 +83,13 @@ def serve_notebook(filename):
 def serve_image(filename):
     return send_from_directory('static/images', filename)
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Set up argument parser
+    parser = argparse.ArgumentParser(description='Run the Flask application.')
+    parser.add_argument('--host', default='localhost', help='Host to run the app on.')
+    parser.add_argument('--port', default=5000, type=int, help='Port to run the app on.')
+    args = parser.parse_args()
+    
+    # Run the app with specified host and port
+    app.run(host=args.host, port=args.port,debug=True)
