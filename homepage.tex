@@ -1,20 +1,40 @@
 \documentclass{article}
 \usepackage{hyperref}
+\usepackage{graphicx}
+
 \begin{document}
 
-\title{Available Notebooks}
-\author{Your Name}
-\date{\today}
-\maketitle
+\section*{Welcome to Machine Learning From Scratch}
 
-\section{Available Notebooks}
+\subsection*{Introduction}
 
-Here are the available notebooks:
+This website provides a series of Jupyter notebooks that explain machine learning concepts from scratch.
+
+\subsection*{Notebooks}
 
 \begin{itemize}
-{% for notebook in notebooks %}
-    \item \href{ {{ base_url }}/notebook/{{ notebook|urlencode }} }{ {{ notebook }} }
-{% endfor %}
+    \item \textbf{Back Propagation}: Learn the fundamentals of backpropagation in neural networks.
+    \begin{itemize}
+        \item \href{/notebooks/StartingFromTheBasicsBackPropagation.ipynb}{Back Propagation Notebook}
+    \end{itemize}
+    \item \textbf{Linear Regression}: Understand how linear regression works with step-by-step explanations.
+    \begin{itemize}
+        \item \href{/notebooks/StartingFromTheBasicsLinearRegression.ipynb}{Linear Regression Notebook}
+    \end{itemize}
+    \item \textbf{Matrix Multiplication}: Dive into the mechanics of matrix multiplication.
+    \begin{itemize}
+        \item \href{/notebooks/StartingFromTheBasicsMatrixMultiplication.ipynb}{Matrix Multiplication Notebook}
+    \end{itemize}
 \end{itemize}
+
+\subsection*{Image Example}
+
+Here is an example image:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{static/images/your_image.png}
+    \caption{An example image.}
+\end{figure}
 
 \end{document}
